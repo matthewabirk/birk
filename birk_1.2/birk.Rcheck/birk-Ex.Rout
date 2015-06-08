@@ -1,0 +1,207 @@
+
+R version 3.1.2 (2014-10-31) -- "Pumpkin Helmet"
+Copyright (C) 2014 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "birk"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> base::assign(".ExTimings", "birk-Ex.timings", pos = 'CheckExEnv')
+> base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
+> base::assign(".format_ptime",
++ function(x) {
++   if(!is.na(x[4L])) x[1L] <- x[1L] + x[4L]
++   if(!is.na(x[5L])) x[2L] <- x[2L] + x[5L]
++   options(OutDec = '.')
++   format(x[1L:3L], digits = 7L)
++ },
++ pos = 'CheckExEnv')
+> 
+> ### * </HEADER>
+> library('birk')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("conv_unit")
+> ### * conv_unit
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: conv_unit
+> ### Title: Convert Units of Measurement
+> ### Aliases: conv_unit
+> 
+> ### ** Examples
+> 
+> conv_unit(2.54, cm, inch) # Result = 1 inch
+[1] 1
+> conv_unit(seq(1, 10), kg, short_ton) # A vector of measurement values can be converted
+ [1] 0.001102311 0.002204623 0.003306934 0.004409245 0.005511557 0.006613868
+ [7] 0.007716179 0.008818490 0.009920802 0.011023113
+> conv_unit("33 1 1", deg_min_sec, dec_deg)
+[1] "33.0169444444444"
+> conv_unit(c("101 44.32","3 19.453"), deg_dec_min, deg_min_sec)
+[1] "101 44 19.2000000000116" "3 19 27.1800000000003"  
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("conv_unit", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("conv_unit_options")
+> ### * conv_unit_options
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: conv_unit_options
+> ### Title: Unit of Measurement Conversion Options
+> ### Aliases: conv_unit_options
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> conv_unit_options
+$Acceleration
+[1] "mm_per_sec2"   "cm_per_sec2"   "m_per_sec2"    "km_per_sec2"  
+[5] "grav"          "inch_per_sec2" "ft_per_sec2"   "mi_per_sec2"  
+
+$Angle
+[1] "degree" "radian" "grad"   "arcmin" "arcsec" "turn"  
+
+$Area
+ [1] "nm2"      "um2"      "mm2"      "cm2"      "m2"       "hectare" 
+ [7] "km2"      "inch2"    "ft2"      "yd2"      "acre"     "mi2"     
+[13] "naut_mi2"
+
+$Coordinate
+[1] "dec_deg"     "deg_dec_min" "deg_min_sec"
+
+$Duration
+ [1] "nsec" "usec" "msec" "sec"  "min"  "hr"   "day"  "wk"   "mon"  "yr"  
+[11] "dec"  "cen"  "mil" 
+
+$Energy
+[1] "J"    "erg"  "cal"  "Cal"  "Wsec" "kWh"  "MWh"  "BTU" 
+
+$Flow
+ [1] "ml_per_sec"  "ml_per_min"  "ml_per_hr"   "l_per_sec"   "l_per_min"  
+ [6] "l_per_hr"    "m3_per_sec"  "m3_per_min"  "m3_per_hr"   "gal_per_sec"
+[11] "gal_per_min" "gal_per_hr"  "ft3_per_sec" "ft3_per_min" "ft3_per_hr" 
+
+$Length
+ [1] "nm"       "um"       "mm"       "cm"       "dm"       "m"       
+ [7] "km"       "inch"     "ft"       "yd"       "mi"       "naut_mi" 
+[13] "light_yr"
+
+$Mass
+ [1] "ug"         "mg"         "g"          "kg"         "metric_ton"
+ [6] "oz"         "lb"         "short_ton"  "long_ton"   "stone"     
+
+$Power
+ [1] "uW"          "mW"          "W"           "kW"          "MW"         
+ [6] "GW"          "erg_per_sec" "cal_per_sec" "cal_per_hr"  "Cal_per_sec"
+[11] "Cal_per_hr"  "BTU_per_sec" "BTU_per_hr"  "hp"         
+
+$Pressure
+ [1] "uatm" "atm"  "Pa"   "hPa"  "kPa"  "torr" "mmHg" "inHg" "mbar" "bar" 
+[11] "dbar" "psi" 
+
+$Speed
+[1] "mm_per_sec"   "cm_per_sec"   "m_per_sec"    "km_per_sec"   "inch_per_sec"
+[6] "ft_per_sec"   "kph"          "mph"          "knot"        
+
+$Temperature
+[1] "C" "F" "K" "R"
+
+$Volume
+ [1] "ml"        "dl"        "l"         "cm3"       "dm3"       "m3"       
+ [7] "us_tsp"    "us_tbsp"   "us_oz"     "us_cup"    "us_pint"   "us_quart" 
+[13] "us_gal"    "inch3"     "ft3"       "imp_tsp"   "imp_tbsp"  "imp_oz"   
+[19] "imp_pint"  "imp_quart" "imp_gal"  
+
+> conv_unit_options['Pressure']
+$Pressure
+ [1] "uatm" "atm"  "Pa"   "hPa"  "kPa"  "torr" "mmHg" "inHg" "mbar" "bar" 
+[11] "dbar" "psi" 
+
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("conv_unit_options", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("geom_mean")
+> ### * geom_mean
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: geom_mean
+> ### Title: Geometric Mean
+> ### Aliases: geom_mean
+> 
+> ### ** Examples
+> 
+> geom_mean(1:10)
+[1] 4.528729
+> geom_mean(0:10)
+[1] 0
+> geom_mean(0:10, add0.001 = TRUE)
+[1] 2.10732
+> geom_mean(-10:10, add0.001 = TRUE, ignore_neg = TRUE)
+[1] 2.10732
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("geom_mean", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("se")
+> ### * se
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: se
+> ### Title: Standard Error
+> ### Aliases: se
+> 
+> ### ** Examples
+> 
+> se(1:10)
+[1] 0.9574271
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("se", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> ### * <FOOTER>
+> ###
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  0.131 0.007 0.174 0 0 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')

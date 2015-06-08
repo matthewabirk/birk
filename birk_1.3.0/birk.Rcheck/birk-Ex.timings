@@ -1,0 +1,7 @@
+name	user	system	elapsed
+Q10calc	0.001	0.000	0.002	
+conv_unit	0.012	0.000	0.014	
+conv_unit_options	0.002	0.001	0.004	
+geom_mean	0.001	0.000	0.002	
+range_seq	0.001	0.000	0.002	
+se	0.001	0.001	0.001	

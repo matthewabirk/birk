@@ -1,0 +1,5 @@
+birk-package            MA Birk functions
+conv_unit               Convert Units of Measurement
+conv_unit_options       Unit of Measurement Conversion Options
+geom_mean               Geometric Mean
+se                      Standard Error
