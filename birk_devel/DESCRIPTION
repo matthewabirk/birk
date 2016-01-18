@@ -1,0 +1,15 @@
+Package: birk
+Type: Package
+Title: MA Birk's Functions
+Version: 2.0.0
+Date: 2016-01-17
+Author: Matthew A. Birk
+Maintainer: Matthew A. Birk <matthewabirk@gmail.com>
+Description: This is a compilation of functions that I found useful to make.
+    It currently includes a couple of functions to work with converting units of
+    measurement, and some miscellaneous wrapper functions to make R code shorter and
+    faster to write.
+Imports: grDevices, stats
+License: GPL-3
+Encoding: UTF-8
+RoxygenNote: 5.0.1
