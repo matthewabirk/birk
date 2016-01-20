@@ -1,40 +1,32 @@
 -------------------------------------------------
+version devel, xxxx-xx-xx
+- conv_unit():	added unit options: carat (mass)
+-------------------------------------------------
 version 2.0.0, 2016-01-17
 - conv_dim():		new function
-
 - conv_unit():		MAJOR CHANGE: added functionality to accept objects passing character strings for unit parameters (from and to) at the cost of losing ability to use unquoted arguments
 - conv_unit():		added unit options: mph_per_sec and kph_per_sec (acceleration), kJ (energy), Sv (flow), fathom and parsec (length), Pg (mass), km_per_day and mi_per_day (speed), km3, mi3, and imp_cup (volume)
 - conv_unit():		removed "lb" ("lbs" remains) and the mis-spelled "hectacre" ("hectare" remains)
-
 - Q10calc():		removed function to clarify focus of the package
-
 - summ_stat():		new function
-
 - which.closest():	new function
 -------------------------------------------------
 version 1.3.0, 2015-01-31
 - conv_unit():	added unit options: angstrom and au (length), light and mach (speed), ul (volume)
 - conv_unit():	added "lbs" as a synonym for "lb" (mass)
 - conv_unit():	increased efficiency and speed of coordinate unit conversions
-
 - Q10calc():	new function
-
 - range_seq():	new function
 -------------------------------------------------
 version 1.2, 2014-11-07
 - conv_unit():	added dimensions: angle, coordinate
 - conv_unit():	added unit options: hectare (area), R (temperature), dm3 and dl (volume)
-
 - geom_mean():	new function
-
 - minor modifications to conv_unit help page
-
 -------------------------------------------------
 version 1.1, 2014-08-29
 - conv_unit():	added dimensions: acceleration, energy, flow, power, and temperature
-
 -------------------------------------------------
 version 1.0, 2014-06-25
 - conv_unit():	new function
-
 - se():		new function
