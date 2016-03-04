@@ -13,3 +13,5 @@ Imports: grDevices, stats
 License: GPL-3
 Encoding: UTF-8
 RoxygenNote: 5.0.1
+NeedsCompilation: no
+Packaged: 2016-03-04 19:28:20 UTC; matthewbirk
