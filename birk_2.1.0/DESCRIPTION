@@ -5,10 +5,9 @@ Version: 2.1.0
 Date: 2016-03-04
 Author: Matthew A. Birk
 Maintainer: Matthew A. Birk <matthewabirk@gmail.com>
-Description: This is a compilation of functions that I found useful to make.
-    It currently includes a couple of functions to work with converting units of
-    measurement, and some miscellaneous wrapper functions to make R code shorter and
-    faster to write.
+Description: Collection of tools to make R more convenient. Includes tools to
+    convert between units and dimensions of measurement and to summarize data
+    using statistics not available with base R.
 Imports: grDevices, stats
 License: GPL-3
 Encoding: UTF-8

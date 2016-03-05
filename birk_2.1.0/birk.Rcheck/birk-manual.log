@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.7.28)  4 MAR 2016 14:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.7.28)  4 MAR 2016 18:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -694,8 +694,8 @@ LaTeX Font Info:    Try loading font information for T1+zi4 on input line 22.
 File: t1zi4.fd 2014/06/22 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 33.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 33.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 32.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 32.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
@@ -718,13 +718,13 @@ File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 ) [2]
-Overfull \hbox (4.38098pt too wide) in paragraph at lines 105--105
+Overfull \hbox (4.38098pt too wide) in paragraph at lines 104--104
  []\T1/zi4/m/n/9 # How many degrees does the temperature increase with an incre
 ase in 4 kPa given 0.8 Celcius[] 
  []
 
 
-Overfull \hbox (17.88098pt too wide) in paragraph at lines 110--110
+Overfull \hbox (17.88098pt too wide) in paragraph at lines 109--109
  []\T1/zi4/m/n/9 conv_dim(x = c(60, 80), x_unit = "ft3", trans_unit = "kg_per_l
 ", y = c(6e6, 4e6), y_unit = "g")[] 
  []
@@ -732,19 +732,19 @@ Overfull \hbox (17.88098pt too wide) in paragraph at lines 110--110
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
-Overfull \hbox (25.09752pt too wide) in paragraph at lines 140--141
+Overfull \hbox (25.09752pt too wide) in paragraph at lines 139--140
 []\T1/ptm/m/n/10 mm_per_sec2, cm_per_sec2, m_per_sec2, km_per_sec2, grav, inch_
 per_sec2, ft_per_sec2,
  []
 
 [3]
-Overfull \hbox (13.51762pt too wide) in paragraph at lines 147--148
+Overfull \hbox (13.51762pt too wide) in paragraph at lines 146--147
 []\T1/ptm/m/n/10 ml_per_sec, ml_per_min, ml_per_hr, l_per_sec, l_per_min, l_per
 _hr, m3_per_sec, m3_per_min,
  []
 
 
-Overfull \hbox (0.3887pt too wide) in paragraph at lines 150--151
+Overfull \hbox (0.3887pt too wide) in paragraph at lines 149--150
 []\T1/ptm/m/n/10 uW, mW, W, kW, MW, GW, erg_per_sec, cal_per_sec, cal_per_hr, C
 al_per_sec, Cal_per_hr,
  []
@@ -764,7 +764,7 @@ File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
-Overfull \hbox (10.68097pt too wide) in paragraph at lines 405--405
+Overfull \hbox (10.68097pt too wide) in paragraph at lines 404--404
  []\T1/zi4/m/n/9 summ_stat(mean = rnorm(1e4), n = rep(1, 1e4)) # Find pooled me
 an when variability is unknown.[] 
  []
@@ -784,18 +784,18 @@ LaTeX Font Warning: Font shape `T1/zi4/m/it' undefined
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 445.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 445.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 444.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 444.
  (./Rd2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 445.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 445.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 444.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 444.
 Package rerunfilecheck Info: File `Rd2.out' has not changed.
 (rerunfilecheck)             Checksum: E3572B17676C0B9F05A9E6641AB2E935;536.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 445.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 444.
  ) 
 Here is how much of TeX's memory you used:
  6445 strings out of 493093
@@ -838,7 +838,7 @@ ve/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/te
 xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/f
 onts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
 /urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (10 pages, 97576 bytes).
+Output written on Rd2.pdf (10 pages, 97478 bytes).
 PDF statistics:
  276 PDF objects out of 1000 (max. 8388607)
  254 compressed objects within 3 object streams

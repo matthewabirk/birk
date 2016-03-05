@@ -1,4 +1,7 @@
 -------------------------------------------------
+version x.y.z, xxxx-xx-xx
+- 
+-------------------------------------------------
 version 2.1.0, 2016-03-04
 - conv_unit():	added dimension: count
 - conv_unit():	added unit options: Ma (duration), point (length), carat (mass)
