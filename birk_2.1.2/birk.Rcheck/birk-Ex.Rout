@@ -1,0 +1,402 @@
+
+R version 3.3.1 (2016-06-21) -- "Bug in Your Hair"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "birk"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> base::assign(".ExTimings", "birk-Ex.timings", pos = 'CheckExEnv')
+> base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
+> base::assign(".format_ptime",
++ function(x) {
++   if(!is.na(x[4L])) x[1L] <- x[1L] + x[4L]
++   if(!is.na(x[5L])) x[2L] <- x[2L] + x[5L]
++   options(OutDec = '.')
++   format(x[1L:3L], digits = 7L)
++ },
++ pos = 'CheckExEnv')
+> 
+> ### * </HEADER>
+> library('birk')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("conv_dim")
+> ### * conv_dim
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: conv_dim
+> ### Title: Convert Dimensions of Measurement
+> ### Aliases: conv_dim
+> 
+> ### ** Examples
+> 
+> # How many minutes does it take to travel 100 meters at 3 feet per second?
+> conv_dim(x = 100, x_unit = "m", trans = 3, trans_unit = "ft_per_sec", y_unit = "min")
+Warning: conv_dim() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+[1] 1.822689
+> 
+> # How many degrees does the temperature increase with an increase in 4 kPa given 0.8 Celcius
+> # increase per psi?
+> conv_dim(x_unit = "C", trans = 0.8, trans_unit = "C_per_psi", y = 4, y_unit = "kPa")
+Warning: conv_dim() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+[1] 0.4641208
+> 
+> # Find the densities given volume and mass measurements.
+> conv_dim(x = c(60, 80), x_unit = "ft3", trans_unit = "kg_per_l", y = c(6e6, 4e6), y_unit = "g")
+Warning: conv_dim() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+[1] 3.531467 1.765733
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("conv_dim", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("conv_unit")
+> ### * conv_unit
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: conv_unit
+> ### Title: Convert Units of Measurement
+> ### Aliases: conv_unit
+> 
+> ### ** Examples
+> 
+> conv_unit(2.54, "cm", "inch") # Result = 1 inch
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+[1] 1
+> 
+> conv_unit(seq(1, 10), "kg", "short_ton") # A vector of measurement values can be converted
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+ [1] 0.001102311 0.002204623 0.003306934 0.004409245 0.005511557 0.006613868
+ [7] 0.007716179 0.008818490 0.009920802 0.011023113
+> 
+> # Convert 1, 10, and 100 meters to all other length units
+> sapply(conv_unit_options$length, function(x) conv_unit(c(1, 10, 100), "m", x))
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+     angstrom    nm    um    mm    cm   dm   m    km       inch        ft
+[1,]    1e+10 1e+09 1e+06 1e+03   100   10   1 0.001   39.37008   3.28084
+[2,]    1e+11 1e+10 1e+07 1e+04  1000  100  10 0.010  393.70079  32.80840
+[3,]    1e+12 1e+11 1e+08 1e+05 10000 1000 100 0.100 3937.00787 328.08399
+             yd     fathom           mi      naut_mi           au     light_yr
+[1,]   1.093613  0.5468066 0.0006213712 0.0005399568 6.684587e-12 1.057001e-16
+[2,]  10.936133  5.4680665 0.0062137119 0.0053995680 6.684587e-11 1.057001e-15
+[3,] 109.361330 54.6806649 0.0621371192 0.0539956803 6.684587e-10 1.057001e-14
+           parsec      point
+[1,] 3.240779e-17   2834.646
+[2,] 3.240779e-16  28346.457
+[3,] 3.240779e-15 283464.567
+> 
+> conv_unit("33 1 1", "deg_min_sec", "dec_deg")
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+[1] "33.0169444444444"
+> 
+> conv_unit(c("101 44.32","3 19.453"), "deg_dec_min", "deg_min_sec")
+Warning: conv_unit() has been transfered to the package "measurements" available on CRAN. It is now deprecated on the "birk" package and will be removed in a future version.
+[1] "101 44 19.2000000000116" "3 19 27.1800000000003"  
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("conv_unit", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("conv_unit_options")
+> ### * conv_unit_options
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: conv_unit_options
+> ### Title: Unit of Measurement Conversion Options
+> ### Aliases: conv_unit_options
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> conv_unit_options
+$acceleration
+ [1] "mm_per_sec2"   "cm_per_sec2"   "m_per_sec2"    "km_per_sec2"  
+ [5] "grav"          "inch_per_sec2" "ft_per_sec2"   "mi_per_sec2"  
+ [9] "kph_per_sec"   "mph_per_sec"  
+
+$angle
+[1] "degree" "radian" "grad"   "arcmin" "arcsec" "turn"  
+
+$area
+ [1] "nm2"      "um2"      "mm2"      "cm2"      "m2"       "hectare" 
+ [7] "km2"      "inch2"    "ft2"      "yd2"      "acre"     "mi2"     
+[13] "naut_mi2"
+
+$coordinate
+[1] "dec_deg"     "deg_dec_min" "deg_min_sec"
+
+$count
+[1] "nmol" "umol" "mmol" "mol" 
+
+$duration
+ [1] "nsec" "usec" "msec" "sec"  "min"  "hr"   "day"  "wk"   "mon"  "yr"  
+[11] "dec"  "cen"  "mil"  "Ma"  
+
+$energy
+[1] "J"    "kJ"   "erg"  "cal"  "Cal"  "Wsec" "kWh"  "MWh"  "BTU" 
+
+$flow
+ [1] "ml_per_sec"  "ml_per_min"  "ml_per_hr"   "l_per_sec"   "l_per_min"  
+ [6] "l_per_hr"    "m3_per_sec"  "m3_per_min"  "m3_per_hr"   "Sv"         
+[11] "gal_per_sec" "gal_per_min" "gal_per_hr"  "ft3_per_sec" "ft3_per_min"
+[16] "ft3_per_hr" 
+
+$length
+ [1] "angstrom" "nm"       "um"       "mm"       "cm"       "dm"      
+ [7] "m"        "km"       "inch"     "ft"       "yd"       "fathom"  
+[13] "mi"       "naut_mi"  "au"       "light_yr" "parsec"   "point"   
+
+$mass
+ [1] "ug"         "mg"         "g"          "kg"         "Pg"        
+ [6] "carat"      "metric_ton" "oz"         "lbs"        "short_ton" 
+[11] "long_ton"   "stone"     
+
+$power
+ [1] "uW"          "mW"          "W"           "kW"          "MW"         
+ [6] "GW"          "erg_per_sec" "cal_per_sec" "cal_per_hr"  "Cal_per_sec"
+[11] "Cal_per_hr"  "BTU_per_sec" "BTU_per_hr"  "hp"         
+
+$pressure
+ [1] "uatm" "atm"  "Pa"   "hPa"  "kPa"  "torr" "mmHg" "inHg" "mbar" "bar" 
+[11] "dbar" "psi" 
+
+$speed
+ [1] "mm_per_sec"   "cm_per_sec"   "m_per_sec"    "km_per_sec"   "inch_per_sec"
+ [6] "ft_per_sec"   "kph"          "mph"          "km_per_day"   "mi_per_day"  
+[11] "knot"         "mach"         "light"       
+
+$temperature
+[1] "C" "F" "K" "R"
+
+$volume
+ [1] "ul"        "ml"        "dl"        "l"         "cm3"       "dm3"      
+ [7] "m3"        "km3"       "us_tsp"    "us_tbsp"   "us_oz"     "us_cup"   
+[13] "us_pint"   "us_quart"  "us_gal"    "inch3"     "ft3"       "mi3"      
+[19] "imp_tsp"   "imp_tbsp"  "imp_oz"    "imp_cup"   "imp_pint"  "imp_quart"
+[25] "imp_gal"  
+
+> conv_unit_options$pressure
+ [1] "uatm" "atm"  "Pa"   "hPa"  "kPa"  "torr" "mmHg" "inHg" "mbar" "bar" 
+[11] "dbar" "psi" 
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("conv_unit_options", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("geom_mean")
+> ### * geom_mean
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: geom_mean
+> ### Title: Geometric Mean
+> ### Aliases: geom_mean
+> 
+> ### ** Examples
+> 
+> geom_mean(1:10)
+[1] 4.528729
+> geom_mean(0:10)
+[1] 0
+> geom_mean(0:10, add0.001 = TRUE)
+[1] 2.10732
+> geom_mean(-10:10, add0.001 = TRUE, ignore_neg = TRUE)
+[1] 2.10732
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("geom_mean", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("range_seq")
+> ### * range_seq
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: range_seq
+> ### Title: Sequence Generation Spanning A Numerical Range
+> ### Aliases: range_seq
+> 
+> ### ** Examples
+> 
+> range_seq(rnorm(10, sd = 20))
+ [1] -16.7125722 -15.7125722 -14.7125722 -13.7125722 -12.7125722 -11.7125722
+ [7] -10.7125722  -9.7125722  -8.7125722  -7.7125722  -6.7125722  -5.7125722
+[13]  -4.7125722  -3.7125722  -2.7125722  -1.7125722  -0.7125722   0.2874278
+[19]   1.2874278   2.2874278   3.2874278   4.2874278   5.2874278   6.2874278
+[25]   7.2874278   8.2874278   9.2874278  10.2874278  11.2874278  12.2874278
+[31]  13.2874278  14.2874278  15.2874278  16.2874278  17.2874278  18.2874278
+[37]  19.2874278  20.2874278  21.2874278  22.2874278  23.2874278  24.2874278
+[43]  25.2874278  26.2874278  27.2874278  28.2874278  29.2874278  30.2874278
+[49]  31.2874278
+> range_seq(c(3, 9), extend = 0.1)
+[1] 2.4 3.4 4.4 5.4 6.4 7.4 8.4 9.4
+> range_seq(c(3, 9), length.out = 20)
+ [1] 3.000000 3.315789 3.631579 3.947368 4.263158 4.578947 4.894737 5.210526
+ [9] 5.526316 5.842105 6.157895 6.473684 6.789474 7.105263 7.421053 7.736842
+[17] 8.052632 8.368421 8.684211 9.000000
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("range_seq", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("se")
+> ### * se
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: se
+> ### Title: Standard Error
+> ### Aliases: se
+> 
+> ### ** Examples
+> 
+> se(1:10)
+[1] 0.9574271
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("se", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("summ_stat")
+> ### * summ_stat
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: summ_stat
+> ### Title: Pooled Summary Descriptive Statistics
+> ### Aliases: summ_stat
+> 
+> ### ** Examples
+> 
+> summ_stat(mean = c(0.68, 0.67), n = c(4, 5), sd = c(0.11, 0.15))
+$pooled_mean
+[1] 0.6744444
+
+$pooled_var
+[1] 0.01581528
+
+$pooled_sd
+[1] 0.1257588
+
+$pooled_se
+[1] 0.0419196
+
+> summ_stat(mean = 0.68, n = 3, se = 5)
+$pooled_mean
+[1] 0.68
+
+$pooled_var
+[1] 75
+
+$pooled_sd
+[1] 8.660254
+
+$pooled_se
+[1] 5
+
+> summ_stat(mean = rnorm(1e4), n = rep(1, 1e4)) # Find pooled mean when variability is unknown.
+$pooled_mean
+[1] -0.006537039
+
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("summ_stat", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("which.closest")
+> ### * which.closest
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: which.closest
+> ### Title: Where is the closest?
+> ### Aliases: which.closest
+> 
+> ### ** Examples
+> 
+> which.closest(10:1, 3.3)
+[1] 8
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("which.closest", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> ### * <FOOTER>
+> ###
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  0.189 0.014 0.306 0 0 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')

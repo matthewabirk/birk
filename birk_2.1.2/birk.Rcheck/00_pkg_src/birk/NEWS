@@ -1,7 +1,4 @@
 -------------------------------------------------
-version x.y.z, yyyy-mm-dd
-
--------------------------------------------------
 version 2.1.2, 2016-07-27
 - conv_dim():	added notice that conv_dim() is now deprecated in this package and has been transfered to a more appropriate package: measurements
 - conv_unit():	added notice that conv_unit() is now deprecated in this package and has been transfered to a more appropriate package: measurements

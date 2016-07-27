@@ -1,8 +1,8 @@
 Package: birk
 Type: Package
 Title: MA Birk's Functions
-Version: x.y.z
-Date: yyyy-mm-dd
+Version: 2.1.2
+Date: 2016-07-27
 Author: Matthew A. Birk
 Maintainer: Matthew A. Birk <matthewabirk@gmail.com>
 Description: Collection of tools to make R more convenient. Includes tools to
@@ -12,3 +12,5 @@ Imports: grDevices, stats
 License: GPL-3
 Encoding: UTF-8
 RoxygenNote: 5.0.1
+NeedsCompilation: no
+Packaged: 2016-07-27 02:46:16 UTC; matthewbirk

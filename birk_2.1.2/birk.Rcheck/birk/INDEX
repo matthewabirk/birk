@@ -1,0 +1,9 @@
+birk                    MA Birk's Functions
+conv_dim                Convert Dimensions of Measurement
+conv_unit               Convert Units of Measurement
+conv_unit_options       Unit of Measurement Conversion Options
+geom_mean               Geometric Mean
+range_seq               Sequence Generation Spanning A Numerical Range
+se                      Standard Error
+summ_stat               Pooled Summary Descriptive Statistics
+which.closest           Where is the closest?

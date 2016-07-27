@@ -1,8 +1,8 @@
 Package: birk
 Type: Package
 Title: MA Birk's Functions
-Version: x.y.z
-Date: yyyy-mm-dd
+Version: 2.1.2
+Date: 2016-07-27
 Author: Matthew A. Birk
 Maintainer: Matthew A. Birk <matthewabirk@gmail.com>
 Description: Collection of tools to make R more convenient. Includes tools to
